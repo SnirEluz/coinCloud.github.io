@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Outfit;
+}
+.container {
+    height: 100vh;
+    background-image: url(/95971.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100vw 500px;
+    background-attachment: fixed;
+    background-position: top;
+
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        .logo {
+            background-color: rgb(255, 255, 255);
+            border-bottom: 1px solid rgb(205, 205, 205);
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 20px;
+            height: 55px;
+            z-index: 30;
+            img {
+                width: 23px;
+                height: 23px;
+                margin-right: 8px;
+            }
+            h1 {
+                font-weight: 300;
+                font-size: 20px;
+                color: rgb(74, 74, 74);
+            }
+            .menuDiv {
+                position: absolute;
+                right: 20px;
+                .btnCoins,
+                .btnLiveReports,
+                .btnAbout {
+                    border: none;
+                    min-width: 120px;
+                    height: 37px;
+                    border-radius: 5px;
+                    background-color: rgba(246, 209, 44, 0.341);
+                    border: 2px solid rgba(246, 209, 44, 0.863);
+                    font-weight: 500;
+                    color: rgb(0, 0, 0);
+                    cursor: pointer;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+    .subHeader {
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding-left: 4vh;
+        height: 90px;
+        border-radius: 30px 30px 0px 0px;
+        border-top: 1px solid rgb(205, 205, 205);
+        margin-top: 200px;
+        .searchCoinDiv {
+            display: flex;
+            .InpSearchCoin {
+                width: 200px;
+                height: 40px;
+                padding-left: 10px;
+                border-radius: 5px 0px 0px 5px;
+                border: 1px solid rgba(246, 209, 44, 0.863);
+                border-right: 0;
+                outline: none;
+            }
+            input:focus::placeholder {
+                color: rgba(255, 0, 0, 0);
+            }
+            .btnSearchCoin {
+                border: none;
+                width: 60px;
+                height: 40px;
+                border-radius: 0px 5px 5px 0px;
+                background-color: rgba(246, 209, 44, 0.341);
+                border: 1px solid rgba(246, 209, 44, 0.863);
+                color: rgb(0, 0, 0);
+                font-weight: 300;
+                cursor: pointer;
+            }
+        }
+    }
+    //  Page 1 "Home" //
+    .coins {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 2vw 3vw;
+        border-radius: 30px;
+        background-color: rgb(255, 255, 255);
+        .coin {
+            flex: 1 1 200px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: start;
+            flex-direction: column;
+            height: auto;
+            margin: 10px;
+            min-width: 260px;
+            padding: 0px 0px 20px 20px;
+            background-color: white;
+            box-shadow: rgba(194, 200, 207, 0.2) 2px 2px 6px 2px;
+            position: relative;
+            border-radius: 5px;
+            .coinName {
+                margin-top: 5px;
+                font-weight: 500;
+            }
+            .coinSymbol {
+                font-size: 18px;
+                margin-top: 15px;
+                font-weight: 300;
+            }
+            .switch {
+                position: absolute;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+                right: 8%;
+                top: 15px;
+                .checkbox {
+                    margin: 7px;
+                }
+                .switch input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    -webkit-transition: 0.4s;
+                    transition: 0.4s;
+                }
+                .slider:before {
+                    position: absolute;
+                    content: "";
+                    height: 26px;
+                    width: 26px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: white;
+                    -webkit-transition: 0.4s;
+                    transition: 0.4s;
+                }
+                input:checked + .slider {
+                    background-color: #f6d12c;
+                }
+                input:focus + .slider {
+                    box-shadow: 0 0 1px #f6d12c;
+                }
+                input:checked + .slider:before {
+                    -webkit-transform: translateX(26px);
+                    -ms-transform: translateX(26px);
+                    transform: translateX(26px);
+                }
+                .slider.round {
+                    border-radius: 34px;
+                }
+                .slider.round:before {
+                    border-radius: 50%;
+                }
+            }
+            button {
+                border: none;
+                width: 100px;
+                height: 30px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            button:hover {
+                background-color: rgb(219, 219, 219);
+            }
+            .collapser {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: relative;
+                height: 140px;
+                background-color: rgba(246, 209, 44, 0.341);
+                border: 2px solid #f6d12cdc;
+                width: 90%;
+                padding: 15px;
+                margin: 20px 0px 0px 0px;
+                border-radius: 10px;
+                .loading {
+                    display: none;
+                    position: absolute;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                    cursor: pointer;
+                    width: 100px;
+                    height: 30px;
+                    right: 60px;
+                    top: 20px;
+                    margin-top: 10px;
+                    font-size: 13px;
+                    border-radius: 5px;
+                    background-color: rgb(255, 255, 255);
+                }
+                img {
+                    width: 28px;
+                    border-radius: 50%;
+                }
+                p {
+                    font-size: 13px;
+                    font-weight: 200;
+                    margin-bottom: 3px;
+                }
+                h1 {
+                    font-size: 16px;
+                    font-family: Outfit;
+                    font-weight: 400;
+                }
+            }
+        }
+        .watchList {
+            display: none;
+            position: fixed;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 500px;
+            width: 350px;
+            z-index: 10;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgba(194, 200, 207, 0.2) 2px 2px 6px 2px;
+            .headerWatchList {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                padding: 20px;
+                height: 60px;
+                border-radius: 10px 10px 0px 0px;
+                background-color: rgba(238, 238, 238, 0.56);
+                .headerWatchListExit {
+                    display: flex;
+                    border-radius: 5px;
+                    background-color: rgba(246, 209, 44, 0.341);
+                    border: 2px solid rgba(246, 209, 44, 0.863);
+                    padding: 4px;
+                    cursor: pointer;
+                    img {
+                        opacity: 0.6;
+                        width: 12px;
+                    }
+                }
+            }
+            .watchListCoins {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                height: 540px;
+                .watchListCoin {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    width: 90%;
+                    height: 68px;
+                    padding: 0px 0px 0px 20px;
+                    margin-top: 15px;
+                    background-color: rgba(246, 209, 44, 0.158);
+                    border: 2px solid #f6d12cdc;
+                    .watchListCoinImg {
+                        width: 30px;
+                    }
+                    .watchListCoinName {
+                        margin-left: 10px;
+                        font-size: 19px;
+                        font-weight: 400;
+                    }
+                    .watchListCoinBtc {
+                        margin-left: 10px;
+                        font-weight: 400;
+                        font-size: 20px;
+                    }
+                    .watchListCoinSwich {
+                        position: absolute;
+                        display: inline-block;
+                        width: 60px;
+                        height: 34px;
+                        right: 20px;
+                        .watchListCoinCheckbox {
+                            margin: 8px;
+                        }
+                        .switch input {
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+                        }
+                        .slider {
+                            position: absolute;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: #ccc;
+                            -webkit-transition: 0.4s;
+                            transition: 0.4s;
+                        }
+                        .slider:before {
+                            position: absolute;
+                            content: "";
+                            height: 26px;
+                            width: 26px;
+                            left: 4px;
+                            bottom: 4px;
+                            background-color: white;
+                            -webkit-transition: 0.4s;
+                            transition: 0.4s;
+                        }
+                        input:checked + .slider {
+                            background-color: #f6d12c;
+                        }
+                        input:focus + .slider {
+                            box-shadow: 0 0 1px #f6d12c;
+                        }
+                        input:checked + .slider:before {
+                            -webkit-transform: translateX(26px);
+                            -ms-transform: translateX(26px);
+                            transform: translateX(26px);
+                        }
+                        .slider.round {
+                            border-radius: 34px;
+                        }
+                        .slider.round:before {
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+        .lightBox {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(175, 175, 175, 0.479);
+            z-index: 9;
+            position: fixed;
+        }
+    }
+    //  Page 2 "liveReports" //
+    .liveReports {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        height: 600px;
+        background-color: #ffffff;
+        #chartContainer {
+            width: 90%;
+            height: 90%;
+        }
+    }
+    //  Page 3 "about" //
+    .about {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 50px 50px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 30px 30px 0px 0px;
+        h1 {
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        h3 {
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: rgb(122, 122, 122);
+        }
+        .profilePic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 30px 0px;
+            transform: rotateY(180deg);
+            filter: blur(2px);
+        }
+        .profilePic:hover{
+            filter: blur(0px);
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-weight: 200;
+            font-size: 19px;
+        }
+        .lastDiv {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            img {
+                width: 60px;
+                height: 60px;
+                margin-right: 20px;
+            }
+        }
+        h6{
+            margin-top: 40px;
+            font-weight: 300;
+        }
+    }
+    .footer {
+        backdrop-filter: 0;
+
+    }
+}
