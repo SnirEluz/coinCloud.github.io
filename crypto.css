@@ -8,7 +8,7 @@
 
 .container {
   height: 100vh;
-  background-image: url(/95971.jpeg);
+  background-image: url(/coinCloud.github.io/95971.jpeg);
   background-repeat: no-repeat;
   background-size: 100vw 500px;
   background-attachment: fixed;
@@ -586,5 +586,30 @@
 .container .footer {
   -webkit-backdrop-filter: 0;
           backdrop-filter: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .container .header .logo {
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    padding-top: 10px;
+  }
+  .container .header .logo .menuDiv {
+    position: absolute;
+    bottom: 10px;
+  }
+  .container .header .logo .menuDiv .btnCoins,
+  .container .header .logo .menuDiv .btnLiveReports,
+  .container .header .logo .menuDiv .btnAbout {
+    min-width: 100px;
+  }
 }
 /*# sourceMappingURL=crypto.css.map */
